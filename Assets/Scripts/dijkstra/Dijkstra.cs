@@ -70,7 +70,6 @@ public class Dijkstra : MonoBehaviour
                 cell = aaa.GetComponent<Cell>();
                 if (!cell.confirm)
                 {
-                    ground.Add(aaa);
                     distance = beforeDistance;
                     distance += cell.type;
                     // 移動力を超えた場合
@@ -78,10 +77,10 @@ public class Dijkstra : MonoBehaviour
                     if (distance > playerMove)
                     {
                         Debug.Log("Over");
-                        ground.Remove(aaa);
                     }
                     else
                     {
+                        ground.Add(aaa);
                         cell.DistUpdate(distance, route);
                     }
                 }
@@ -96,7 +95,7 @@ public class Dijkstra : MonoBehaviour
             }
         }
 
-        //Debug.Log(ground.Count);
+
         if (confirmRoute.Count == 0)
         {
             Debug.Log("break");
@@ -127,7 +126,7 @@ public class Dijkstra : MonoBehaviour
                     cell = confirmPoint.GetComponent<Cell>();
                     cell.Confirm();
                     cell.CanMove();
-                    distance = cell.MoveingDistance();
+                    distance = cell.MovingDistance();
                     if (distance == int.MaxValue)
                     {
                         distance = 0;

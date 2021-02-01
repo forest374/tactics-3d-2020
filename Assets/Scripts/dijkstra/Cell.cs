@@ -8,7 +8,6 @@ public class Cell : MonoBehaviour
     [SerializeField] public int type = 1;
     int movingDistance = int.MaxValue;
     public bool confirm = false;
-    //List<int> route = new List<int>();
     List<GameObject> route = new List<GameObject>();
 
 
@@ -59,8 +58,15 @@ public class Cell : MonoBehaviour
         Vector3 a = transform.position + Vector3.up * 0.51f;
         GameObject aaaa = Instantiate(canMove, a, Quaternion.identity);
     }
-    public int MoveingDistance()
+    public void Call()
     {
-        return movingDistance;
+        Debug.Log("movingDistance" + movingDistance);
+        Debug.Log("confirm" + confirm);
+
+        Debug.Log("route");
+        for (int i = 0; i < route.Count; i++)
+        {
+            Debug.Log(route[i].transform.position);
+        }
     }
 }

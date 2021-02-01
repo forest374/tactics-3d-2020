@@ -623,7 +623,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1612767085}
-  - component: {fileID: 1612767084}
+  - component: {fileID: 1612767086}
   m_Layer: 0
   m_Name: Dijkstra
   m_TagString: Untagged
@@ -631,21 +631,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1612767084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1612767083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae20b306fae77e4c8e7edd4c420b5cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1484549801}
-  playerMove: 3
-  map: {fileID: 2026671427}
 --- !u!4 &1612767085
 Transform:
   m_ObjectHideFlags: 0
@@ -660,6 +645,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1612767086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612767083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beb70edb8cbbbae4e8a58c5d59aefc9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1484549801}
+  mapObj: {fileID: 2026671427}
+  playerMove: 3
 --- !u!1 &1819248597
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,8 +742,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1612767084}
-        m_MethodName: DijkstraOn
+      - m_Target: {fileID: 1612767086}
+        m_MethodName: Dijkstra
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
